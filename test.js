@@ -15,10 +15,11 @@ describe('User visits project root', () => {
       browser.setValue('input[id=attributed]', attributed);
       browser.setValue('input[id=source]', source);
       browser.click('input[type=submit]');
-
-    
       
-      
+      // Verify
+      assert.include(browser.getText('#quotes'), quote);
+      assert.include(browser.getText('#quotes'), attributed);
+      assert.include(browser.getText('#quotes'), source);
     });
   });
 });
